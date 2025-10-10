@@ -57,7 +57,7 @@ export default function Hero() {
         />
       </div>
 
-      <div className="mx-auto max-w-6xl px-4 py-24 sm:py-28 md:py-32">
+      <div className="mx-auto max-w-6xl px-4 py-24 sm:py-28 md:py-32 -mt-21">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -65,7 +65,7 @@ export default function Hero() {
           className="max-w-2xl"
         >
           
-          <h1 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-serif text-white opacity-100 text-popover-foreground">
+          <h1 className="mt-5 text-4xl sm:text-5xl lg:text-6xl font-serif text-white opacity-100 text-popover-foreground">
             Experience Wayanad in Comfort & Style
           </h1>
           <p className="mt-4 text-base sm:text-lg text-red-950">
@@ -98,7 +98,7 @@ export default function Hero() {
 
         {/* Photo Grid with hover animation */}
         <div className="relative mt-12 md:mt-16">
-          <div className="relative grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 sm:gap-6 items-end">
+          <div className="relative grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 sm:gap-6 items-end -mt-8">
             {photos.map((p, i) => (
               <motion.div
                 key={i}
