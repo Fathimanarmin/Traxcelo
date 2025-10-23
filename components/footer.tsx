@@ -93,7 +93,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="w-5 h-5 flex-shrink-0 text-[#FFD700]" />
-                <span>+91 98765 43210</span>
+                <span>+91 99613 20536</span>
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="w-5 h-5 flex-shrink-0 text-[#FFD700]" />
@@ -103,7 +103,7 @@ export default function Footer() {
 
             {/* Social Media */}
             <div className="flex gap-3 mt-6">
-              {[{ icon: Facebook, href: "#" }, { icon: Instagram, href: "#" }, { icon: Twitter, href: "#" }].map(
+              {[{ icon: Facebook, href: "#" }, { icon: Instagram, href: "https://www.instagram.com/traxelowayanad?igsh=NzdvcGVxcjgwdjgy" }, { icon: Twitter, href: "#" }].map(
                 (social, index) => (
                   <motion.a
                     key={index}

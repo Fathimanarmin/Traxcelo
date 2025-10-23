@@ -58,30 +58,30 @@ export default function Contact() {
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <Card className={`border-0 shadow-xl ${isVisible ? "animate-scale-in opacity-0 delay-100" : "opacity-0"}`}>
+          <Card className={ `border-0 shadow-xl ${isVisible ? "animate-scale-in opacity-0 " : "opacity-0" }`}>
             <CardContent className="p-8">
               <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="space-y-2">
+                <div className="space-y-6">
                   <Label htmlFor="name">Full Name</Label>
                   <Input id="name" name="name" placeholder="John Doe" required className="h-12" />
                 </div>
 
-                <div className="space-y-2">
+                <div className="space-y-6">
                   <Label htmlFor="phone">Phone Number</Label>
                   <Input id="phone" name="phone" type="tel" placeholder="+91 98765 43210" required className="h-12" />
                 </div>
 
-                <div className="space-y-2">
+                <div className="space-y-6">
                   <Label htmlFor="email">Email Address</Label>
                   <Input id="email" name="email" type="email" placeholder="john@example.com" className="h-12" />
                 </div>
 
-                <div className="space-y-2">
+                <div className="space-y-6">
                   <Label htmlFor="pickup-date">Pickup Date</Label>
                   <Input id="pickup-date" name="pickup-date" type="date" required className="h-12" />
                 </div>
 
-                <div className="space-y-2">
+                <div className="space-y-6">
                   <Label htmlFor="message">Message</Label>
                   <Textarea
                     id="message"
@@ -121,7 +121,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground mb-1">Phone</h3>
-                    <p className="text-muted-foreground">+91 98765 43210</p>
+                    <p className="text-muted-foreground">+91 99613 20536</p>
                     <p className="text-muted-foreground">+91 98765 43211</p>
                   </div>
                 </CardContent>

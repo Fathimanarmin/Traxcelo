@@ -1,98 +1,4 @@
-// "use client"
 
-// import { useEffect, useRef, useState } from "react"
-// import Image from "next/image"
-// import { Shield, Clock, Award, MapPin } from "lucide-react"
-
-// export default function About() {
-//   const [isVisible, setIsVisible] = useState(false)
-//   const sectionRef = useRef<HTMLElement>(null)
-
-//   useEffect(() => {
-//     const observer = new IntersectionObserver(
-//       ([entry]) => {
-//         if (entry.isIntersecting) {
-//           setIsVisible(true)
-//         }
-//       },
-//       { threshold: 0.1 },
-//     )
-
-//     if (sectionRef.current) {
-//       observer.observe(sectionRef.current)
-//     }
-
-//     return () => observer.disconnect()
-//   }, [])
-
-//   const features = [
-//     { icon: Shield, label: "Reliable & Safe" },
-//     { icon: Clock, label: "24/7 Service" },
-//     { icon: Award, label: "Premium Quality" },
-//     { icon: MapPin, label: "Local Expertise" },
-//   ]
-
-//   return (
-//     <section id="about" ref={sectionRef} className="py-20 sm:py-32 bg-background">
-//       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-//         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-//           {/* Text Content */}
-//           <div className={`space-y-6 ${isVisible ? "animate-fade-in-up opacity-0" : "opacity-0"}`}>
-//             <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground leading-tight">
-//               Experience <span className="text-primary">Wayanad</span>
-//               <br />
-//               <span className="text-secondary">Like Never Before</span>
-//             </h2>
-//             <div className="h-1 w-20 bg-secondary rounded-full" />
-//             <p className="text-lg text-muted-foreground leading-relaxed">
-//               At TRAXELO, we're more than just a vehicle rental service — we're your trusted travel companion in
-//               Wayanad. Our mission is to provide you with reliable, comfortable, and safe transportation solutions that
-//               enhance your journey through this beautiful destination.
-//             </p>
-//             <p className="text-lg text-muted-foreground leading-relaxed">
-//               With a deep understanding of local routes and a commitment to excellence, we ensure every ride is a
-//               memorable part of your Wayanad experience. From pristine vehicles to professional service, we prioritize
-//               your comfort and peace of mind.
-//             </p>
-
-//             {/* Feature Icons */}
-//             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6">
-//               {features.map((feature, index) => (
-//                 <div
-//                   key={feature.label}
-//                   className={`flex flex-col items-center text-center space-y-2 ${
-//                     isVisible ? "animate-scale-in opacity-0" : "opacity-0"
-//                   } delay-${(index + 2) * 100}`}
-//                 >
-//                   <div className="w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center group hover:bg-secondary transition-colors duration-300">
-//                     <feature.icon className="w-6 h-6 text-secondary group-hover:text-secondary-foreground transition-colors" />
-//                   </div>
-//                   <span className="text-sm font-medium text-foreground">{feature.label}</span>
-//                 </div>
-//               ))}
-//             </div>
-//           </div>
-
-//           {/* Image */}
-//           <div className={`relative ${isVisible ? "animate-fade-in-up opacity-0 delay-200" : "opacity-0"}`}>
-//             <div className="relative h-[400px] sm:h-[500px] lg:h-[600px] rounded-3xl overflow-hidden shadow-2xl">
-//               <Image
-//                 src="/images/wayanad.jpg"
-//                 alt="TRAXELO Vehicles in Wayanad"
-//                 fill
-//                 className="object-cover hover:scale-105 transition-transform duration-700"
-//               />
-//               <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent" />
-//             </div>
-//             {/* Decorative Element */}
-//             <div className="absolute -bottom-6 -right-6 w-40 h-40 bg-secondary/20 rounded-full blur-3xl -z-10" />
-//             <div className="absolute -top-6 -left-6 w-40 h-40 bg-primary/10 rounded-full blur-3xl -z-10" />
-//           </div>
-//         </div>
-//       </div>
-//     </section>
-//   )
-// }
 
 "use client";
 
@@ -232,3 +138,5 @@ export default function About() {
     </section>
   );
 }
+
+

@@ -3,11 +3,10 @@
 "use client";
 
 import React, { useState } from "react";
-import {  AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import { MessageCircle } from "lucide-react";
-import { motion } from "framer-motion";
 
 export default function WayanadServices() {
   const [selectedService, setSelectedService] = useState("wayanad");
@@ -23,12 +22,11 @@ export default function WayanadServices() {
   ];
 
   const whatsappMessage = (msg: string) => {
-    const phone = "918547596321"; // Replace with your WhatsApp number
+    const phone = "+91 99613 20536"; // Replace with your WhatsApp number
     const encodedMsg = encodeURIComponent(msg);
     window.open(`https://wa.me/${phone}?text=${encodedMsg}`, "_blank");
   };
 
-  // Tours data
   const tours = {
     bathery: {
       day1: [
@@ -126,16 +124,16 @@ export default function WayanadServices() {
           animate={{ scale: 1, opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 0.5 }}
-          className="flex gap-6 overflow-x-auto py-6 px-4 scrollbar-thin scrollbar-thumb-yellow-500 scrollbar-track-gray-400"
+          className="flex gap-6 overflow-x-auto py-6 px-4 scrollbar-none"
         >
           {perHeadData.map((item, i) => (
             <motion.div
               key={i}
               whileHover={{ scale: 0.98 }}
-              className="flex-shrink-0 bg-black rounded-3xl p-8 shadow-lg text-center w-80"
+              className="flex-shrink-0 rounded-3xl p-8 shadow-lg text-center w-80"
             >
               <p className="text-secondary text-2xl font-bold font-serif">1-{item.members} Members</p>
-              <p className=" mt-3 text-lg">₹{item.price}</p>
+              <p className="mt-3 text-primary">₹{item.price}</p>
               <Button
                 onClick={() =>
                   whatsappMessage(
@@ -178,22 +176,24 @@ export default function WayanadServices() {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.5 }}
-              className="flex gap-6 overflow-x-auto py-6 px-4 scrollbar-thin scrollbar-thumb-yellow-500 scrollbar-track-gray-400"
+              className="flex gap-6 overflow-x-auto py-6 px-4 scrollbar-none"
             >
               {tours[selectedSub][selectedDay].map((place, i) => (
                 <motion.div
                   key={i}
                   whileHover={{ scale: 0.98 }}
-                  className="flex-shrink-0 bg-black rounded-3xl shadow-lg overflow-hidden w-80"
+                  className="relative flex-shrink-0 rounded-3xl shadow-lg overflow-hidden w-80"
                 >
                   <Image
                     src={`/images/${place.img}`}
                     alt={place.name}
                     width={450}
                     height={300}
-                    className="object-cover w-full h-56 transition-transform duration-500 font-serif"
+                    className="object-cover w-full h-56 transition-transform duration-500"
                   />
-                  <p className="p-4 text-secondary font-semibold text-lg ">{place.name}</p>
+                  <div className="absolute bottom-4 left-4 text-white font-semibold text-lg">
+                    {place.name}
+                  </div>
                 </motion.div>
               ))}
             </motion.div>
@@ -217,47 +217,37 @@ export default function WayanadServices() {
             exit={{ opacity: 0 }}
             className="text-center space-y-6"
           >
-            {/* <h2 className="font-serif text-3xl sm:text-4xl font-bold text-foreground mb-4   ">
-              {selectedService === "wayanad"
-                ? "Wayanad Sightseeing"
-                : selectedService === "resort"
-                ? "Resort & Hotel Booking"
-                : selectedService === "truck"
-                ? "Trucking Tour Packages"
-                : "Call Driver & Guide"}
-            </h2> */}
-
             <h2 className="font-serif text-3xl sm:text-4xl font-bold mb-4">
-  {selectedService === "wayanad" && (
-    <>
-      <span className="text-black">Wayanad</span>{" "}
-      <span className="text-secondary">Sightseeing</span>
-    </>
-  )}
-  {selectedService === "resort" && (
-    <>
-      <span className="text-black">Resort</span>{" "}
-      <span className="text-primary">&</span>{" "}
-      <span className="text-secondary">Hotel Booking</span>
-    </>
-  )}
-  {selectedService === "truck" && (
-    <>
-      <span className="text-black">Trucking</span>{" "}
-      <span className="text-primary">Tour</span>{" "}
-      <span className="text-secondary"> Packages</span>
-    </>
-  )}
-  {selectedService === "driver" && (
-    <>
-      <span className="text-black">Call Driver</span>{" "}
-      <span className="text-primary">&</span>{" "}
-      <span className="text-secondary">Guide</span>
-    </>
-  )}
-</h2>
+              {selectedService === "wayanad" && (
+                <>
+                  <span className="text-black">Wayanad</span>{" "}
+                  <span className="text-secondary">Sightseeing</span>
+                </>
+              )}
+              {selectedService === "resort" && (
+                <>
+                  <span className="text-black">Resort</span>{" "}
+                  <span className="text-primary">&</span>{" "}
+                  <span className="text-secondary">Hotel Booking</span>
+                </>
+              )}
+              {selectedService === "truck" && (
+                <>
+                  <span className="text-black">Trucking</span>{" "}
+                  <span className="text-primary">Tour</span>{" "}
+                  <span className="text-secondary"> Packages</span>
+                </>
+              )}
+              {selectedService === "driver" && (
+                <>
+                  <span className="text-black">Call Driver</span>{" "}
+                  <span className="text-primary">&</span>{" "}
+                  <span className="text-secondary">Guide</span>
+                </>
+              )}
+            </h2>
 
-            <p className="text-black max-w-2xl mx-auto ">
+            <p className="text-black max-w-2xl mx-auto">
               {selectedService === "wayanad" &&
                 "Explore Wayanad’s natural beauty! Visit Edakkal Caves, Soochipara Waterfalls, Banasura Sagar Dam, Pookode Lake, and more."}
               {selectedService === "resort" &&
@@ -268,12 +258,12 @@ export default function WayanadServices() {
                 "Hire professional drivers and local guides for a comfortable and informative travel experience."}
             </p>
 
-            <motion.div className="flex gap-6 overflow-x-auto py-6 px-4 scrollbar-thin scrollbar-thumb-yellow-500 scrollbar-track-gray-400">
+            <motion.div className="flex gap-6 overflow-x-auto py-6 px-4 scrollbar-none">
               {serviceDetails[selectedService].map((item, i) => (
                 <motion.div
                   key={i}
                   whileHover={{ scale: 0.98 }}
-                  className="flex-shrink-0 overflow-hidden rounded-3xl shadow-lg bg-black w-80"
+                  className="relative flex-shrink-0 overflow-hidden rounded-3xl shadow-lg w-80"
                 >
                   <Image
                     src={`/images/${item.img}`}
@@ -282,7 +272,9 @@ export default function WayanadServices() {
                     height={300}
                     className="object-cover w-full h-56 transition-transform duration-500"
                   />
-                  <p className="p-4 text-secondary font-semibold text-lg">{item.name}</p>
+                  <div className="absolute bottom-4 left-4 text-white font-semibold text-lg">
+                    {item.name}
+                  </div>
                 </motion.div>
               ))}
             </motion.div>
@@ -318,10 +310,12 @@ export default function WayanadServices() {
             className="text-center space-y-6"
           >
             <h2 className="font-serif text-3xl sm:text-4xl font-bold mb-4 text-black">
-            Our <span className="text-primary">Tour</span> <span className="text-secondary">Operating</span>
-          </h2><br/>
+              Our <span className="text-primary">Tour</span>{" "}
+              <span className="text-secondary">Operating</span>
+            </h2>
+            <br />
 
-            {/* <div className="flex justify-center gap-4">
+            <div className="flex gap-3 overflow-x-auto justify-center scrollbar-none">
               {["bathery", "kalpetta", "perhead"].map((sub) => (
                 <Button
                   key={sub}
@@ -330,50 +324,25 @@ export default function WayanadServices() {
                     setSelectedSub(sub);
                     setSelectedDay("day1");
                   }}
-                  className={`${
-                    selectedSub === sub
-                      ? "bg-yellow-500 text-black"
-                      : "text-yellow-400 border-yellow-400"
-                  }`}
+                  className={`
+                    relative overflow-hidden px-6 py-2 font-semibold transition-all duration-300
+                    ${
+                      selectedSub === sub
+                        ? "bg-secondary text-black"
+                        : "bg-black text-yellow-400 border-black hover:text-black hover:bg-yellow-400 hover:border-yellow-400 hover:scale-105"
+                    }
+                  `}
                 >
-                  {sub === "bathery"
-                    ? "Bathery"
-                    : sub === "kalpetta"
-                    ? "Kalpetta"
-                    : "Per Head"}
+                  <span className="relative z-10">
+                    {sub === "bathery"
+                      ? "Bathery"
+                      : sub === "kalpetta"
+                      ? "Kalpetta"
+                      : "Per Head"}
+                  </span>
                 </Button>
               ))}
-            </div> */}
-
-          <div className="flex justify-center gap-4">
-  {["bathery", "kalpetta", "perhead"].map((sub) => (
-    <Button
-      key={sub}
-      variant={selectedSub === sub ? "default" : "outline"}
-      onClick={() => {
-        setSelectedSub(sub);
-        setSelectedDay("day1");
-      }}
-      className={`
-        relative overflow-hidden  px-6 py-2 font-semibold transition-all duration-300
-        ${
-          selectedSub === sub
-            ? "bg-secondary text-black "
-            : "bg-black text-yellow-400 border-black hover:text-black hover:bg-yellow-400 hover:border-yellow-400  hover:scale-105"
-        }
-      `}
-    >
-      <span className="relative z-10">
-        {sub === "bathery"
-          ? "Bathery"
-          : sub === "kalpetta"
-          ? "Kalpetta"
-          : "Per Head"}
-      </span>
-    </Button>
-  ))}
-</div>
-
+            </div>
 
             <div>{renderTourContent()}</div>
           </motion.div>
@@ -387,12 +356,12 @@ export default function WayanadServices() {
   return (
     <section className="py-12 px-4 bg-muted/30 text-white">
       <div className="max-w-6xl mx-auto text-center mb-8">
-       <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">
-            Our <span className="text-primary">Services</span> 
-          </h2>
-          <div className="h-1 w-20 bg-secondary rounded-full mx-auto mb-6" />
+        <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-4">
+          Our <span className="text-primary">Services</span>
+        </h2>
+        <div className="h-1 w-20 bg-secondary rounded-full mx-auto mb-6" />
 
-        <div className="flex flex-wrap justify-center gap-3">
+        <div className="flex gap-3 overflow-x-auto justify-center scrollbar-none">
           {services.map((service) => (
             <Button
               key={service.id}

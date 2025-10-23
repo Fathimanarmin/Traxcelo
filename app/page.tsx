@@ -9,6 +9,7 @@ import WhyChooseUs from "@/components/why-choose-us"
 import Contact from "@/components/contact"
 import Footer from "@/components/footer"
 import Loading from "@/components/loading"
+import AchievementPage from "@/components/AchievementPage";
 import { useState, useEffect } from "react";
 
 export default function HomePage() {
@@ -31,6 +32,7 @@ export default function HomePage() {
       <About />
       <Services/>
       <TeamMembers />
+      <AchievementPage/>
       <WhyChooseUs />
       <Contact />
       <Footer />
@@ -39,20 +41,5 @@ export default function HomePage() {
     </div>
   );
 }
-//     <main className="min-h-screen">
-//       <div>
-//       {isLoading && <Preloader />}
-//       {!isLoading && (
-//         <>
-//       <Loading/>
-//       <Navbar />
-//       <Hero />
-//       <About />
-//       <Services/>
-//       <TeamMembers />
-//       <WhyChooseUs />
-//       <Contact />
-//       <Footer />
-//     </main>
-//   )
-// }
+
+

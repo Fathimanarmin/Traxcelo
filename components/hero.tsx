@@ -1,5 +1,4 @@
 
-
 "use client"
 
 import { useState, useEffect, useRef } from "react"
@@ -48,12 +47,26 @@ export default function Hero() {
   return (
     <section id="top" className="relative overflow-hidden">
       {/* Background */}
-      <div ref={bgRef} aria-hidden="true" className="absolute inset-0 -z-10 will-change-transform transition-transform duration-700">
-        <Image src="/images/wayanad-hero.jpg" alt="" fill priority sizes="100vw" className="object-cover" />
+      <div
+        ref={bgRef}
+        aria-hidden="true"
+        className="absolute inset-0 -z-10 will-change-transform transition-transform duration-700"
+      >
+        <Image
+          src="/images/wayanad-hero.jpg"
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          className="object-cover"
+        />
         <div className="absolute inset-0 bg-gradient-to-b from-background/10 to-background/80" />
         <div
           className="absolute inset-0 pointer-events-none"
-          style={{ background: "radial-gradient(60% 60% at 50% 20%, rgba(101,29,14,0.12) 0%, transparent 60%)" }}
+          style={{
+            background:
+              "radial-gradient(60% 60% at 50% 20%, rgba(101,29,14,0.12) 0%, transparent 60%)",
+          }}
         />
       </div>
 
@@ -64,8 +77,7 @@ export default function Hero() {
           transition={{ duration: 1 }}
           className="max-w-2xl"
         >
-          
-          <h1 className="mt-5 text-4xl sm:text-5xl lg:text-6xl font-serif text-white opacity-100 text-popover-foreground">
+          <h1 className="mt- text-4xl sm:text-5xl lg:text-6xl font-serif text-white opacity-100 text-popover-foreground">
             Experience Wayanad in Comfort & Style
           </h1>
           <p className="mt-4 text-base sm:text-lg text-red-950">
@@ -78,27 +90,44 @@ export default function Hero() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 1 }}
             >
-              <Button className="bg-accent text-background hover:bg-accent/90" onClick={() => setOpen(true)}>
+              <Button
+                className="bg-accent text-background hover:bg-accent/90"
+                onClick={() => setOpen(true)}
+              >
                 Book a Ride
               </Button>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ delay: 1.2 }}
-            >
-              <a href="#vehicles">
-                {/* <Button variant="outline" className="border-accent text-accent hover:bg-accent/10 bg-card">
-                  Explore your 
-                </Button> */}
-              </a>
             </motion.div>
           </div>
         </motion.div>
 
         {/* Photo Grid with hover animation */}
         <div className="relative mt-12 md:mt-16">
-          <div className="relative grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 sm:gap-6 items-end -mt-8">
+          {/* Mobile horizontal scroll */}
+          <div className="sm:hidden overflow-x-auto" style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}>
+            <div className="flex gap-4 px-2">
+              {photos.map((p, i) => (
+                <motion.div
+                  key={i}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.5 + i * 0.2 }}
+                  className="rounded-2xl overflow-hidden bg-background/90 shadow-lg ring-1 ring-black/5 hover:-translate-y-2 transition-transform duration-500 flex-shrink-0 w-64"
+                >
+                  <Image
+                    src={p.src || "/placeholder.svg"}
+                    alt={p.alt}
+                    width={280}
+                    height={420}
+                    loading="lazy"
+                    className="h-auto w-full aspect-[3/4] object-cover"
+                  />
+                </motion.div>
+              ))}
+            </div>
+          </div>
+
+          {/* Desktop grid */}
+          <div className="hidden sm:grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 sm:gap-6 items-end -mt-8">
             {photos.map((p, i) => (
               <motion.div
                 key={i}
@@ -122,7 +151,13 @@ export default function Hero() {
       </div>
 
       <BookingModal open={open} onOpenChange={setOpen} />
+
+      {/* Inline CSS to hide scrollbar on mobile */}
+      <style jsx>{`
+        .sm\\:hidden::-webkit-scrollbar {
+          display: none;
+        }
+      `}</style>
     </section>
   )
 }
-

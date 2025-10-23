@@ -49,7 +49,7 @@ export default function WhyChooseUs() {
   }, [])
 
   return (
-    <section id="why-choose-us" ref={sectionRef} className="py-20 sm:py-32 bg-muted/30 relative overflow-hidden">
+    <section id="why-choose-us" ref={sectionRef} className="py-20 sm:py-32 bg-background relative overflow-hidden">
       {/* Background Decorative Elements */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-secondary/5 rounded-full blur-3xl -z-10" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/5 rounded-full blur-3xl -z-10" />

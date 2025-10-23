@@ -116,19 +116,24 @@
   --color-sidebar-ring: var(--sidebar-ring);
 }
 
-@layer base {
+/* @layer base {
   * {
     @apply border-border outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;
   }
-}
+} */
 
 /* Custom smooth scroll */
 html {
   scroll-behavior: smooth;
 }
+
+*:focus {
+  outline: none !important;
+}
+
 
 /* Smooth animations */
 @keyframes fadeInUp {

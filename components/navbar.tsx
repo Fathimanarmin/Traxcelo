@@ -18,7 +18,9 @@ export default function Navbar() {
 
   const navLinks = [
     { href: "#about", label: "About" },
-    { href: "#TeamMembers", label: "Team Members" },
+    { href: "#services", label: "Services" },
+    { href: "#teamMembers", label: "Team Members" },
+    { href: "#AchievementPage", label: "Achievement" },
     { href: "#why-choose-us", label: "Why Us" },
     { href: "#contact", label: "Contact" },
   ];
