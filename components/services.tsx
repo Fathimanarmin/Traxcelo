@@ -1,5 +1,3 @@
-
-
 "use client";
 
 import React, { useState } from "react";
@@ -22,17 +20,20 @@ export default function WayanadServices() {
   ];
 
   const whatsappMessage = (msg: string) => {
-    const phone = "+91 99613 20536"; // Replace with your WhatsApp number
+    const phone = "919961320536"; // No '+' for wa.me links
     const encodedMsg = encodeURIComponent(msg);
     window.open(`https://wa.me/${phone}?text=${encodedMsg}`, "_blank");
   };
 
-  const tours = {
+  const tours: Record<
+    string,
+    Record<string, { name: string; img: string }[]>
+  > = {
     bathery: {
       day1: [
         { name: "Banasura Dam", img: "banasura-sagar-dam.jpg" },
         { name: "MeenMutty Waterfalls", img: "meen.jpg" },
-        { name: "Spices Garden", img: "spices garden.png" },
+        { name: "Spices Garden", img: "view2.jpg" },
         { name: "Karlad Lake", img: "karlad-lake.png" },
         { name: "Pookode Lake", img: "pookode-lake.jpg" },
         { name: "Enooru", img: "enooru.jpg" },
@@ -40,11 +41,11 @@ export default function WayanadServices() {
         { name: "Honey Museum", img: "honey.jpg" },
       ],
       day2: [
-        { name: "Attamala Glass Bride", img: "attamala.jpg" },
+        { name: "Attamala Glass Bridge", img: "attamala.jpg" },
         { name: "Soochipara Waterfalls", img: "soochipara.avif" },
         { name: "900 Kandi Bridge", img: "900kandi.jpg" },
         { name: "Kanthanpara Waterfalls", img: "kanthanpara-waterfalls.jpg" },
-        { name: "Nellarachal View Point", img: "Nellarachal-Viewpoint-.webp" },
+        { name: "Nellarachal View Point", img: "Nellarachal-Viewpoint.webp" },
         { name: "Karapuzha Dam", img: "karapuzha-dam.jpg" },
       ],
       day3: [
@@ -60,12 +61,12 @@ export default function WayanadServices() {
         { name: "Banasura Dam", img: "banasura-sagar-dam.jpg" },
         { name: "MeenMutty Waterfalls", img: "meen.jpg" },
         { name: "Karlad Lake", img: "karlad-lake.png" },
-        { name: "Spices Garden", img: "spices garden.png" },
+        { name: "Spices Garden", img: "view2.jpg" },
         { name: "Pookode Lake", img: "pookode-lake.jpg" },
         { name: "Lakkidi View Point", img: "Lakkidi.jpg" },
       ],
       day2: [
-        { name: "Attamala Glass Bride", img: "attamala.jpg" },
+        { name: "Attamala Glass Bridge", img: "attamala.jpg" },
         { name: "Soochipara Waterfalls", img: "soochipara.avif" },
         { name: "900 Kandi Bridge", img: "900kandi.jpg" },
         { name: "Kanthanpara Waterfalls", img: "kanthanpara-waterfalls.jpg" },
@@ -99,19 +100,19 @@ export default function WayanadServices() {
       { name: "Neelimala View", img: "Neelimala_View_Point.avif" },
     ],
     resort: [
-      { name: "Luxury Resort", img: "" },
-      { name: "Budget Hotel", img: "" },
-      { name: "Wayanad Stay", img: "" },
+      { name: "Luxury Resort", img: "view2.jpg" },
+      { name: "Budget Hotel", img: "view2.jpg" },
+      { name: "Wayanad Stay", img: "view2.jpg" },
     ],
     truck: [
-      { name: "Scenic Truck Tour", img: "truck1.jpg" },
-      { name: "Adventure Trail", img: "truck2.jpg" },
-      { name: "Hilly Routes", img: "truck3.jpg" },
+      { name: "Scenic Truck Tour", img: "view2.jpg" },
+      { name: "Adventure Trail", img: "view2.jpg" },
+      { name: "Hilly Routes", img: "view2.jpg" },
     ],
     driver: [
-      { name: "Professional Driver", img: "driver1.jpg" },
-      { name: "Local Guide", img: "driver2.jpg" },
-      { name: "Friendly Service", img: "driver3.jpg" },
+      { name: "Professional Driver", img: "view2.jpg" },
+      { name: "Local Guide", img: "view2.jpg" },
+      { name: "Friendly Service", img: "view2.jpg" },
     ],
   };
 
@@ -130,14 +131,18 @@ export default function WayanadServices() {
             <motion.div
               key={i}
               whileHover={{ scale: 0.98 }}
-              className="flex-shrink-0 rounded-3xl p-8 shadow-lg text-center w-80"
+              className="flex-shrink-0 rounded-3xl p-8 shadow-lg text-center w-80 bg-white"
             >
-              <p className="text-secondary text-2xl font-bold font-serif">1-{item.members} Members</p>
-              <p className="mt-3 text-primary">₹{item.price}</p>
+              <p className="text-secondary text-2xl font-bold font-serif">
+                1–{item.members} Members
+              </p>
+              <p className="mt-3 text-primary text-lg font-semibold">
+                ₹{item.price}
+              </p>
               <Button
                 onClick={() =>
                   whatsappMessage(
-                    `Hi! I want to book the Per Head package for 1-${item.members} member(s).`
+                    `Hi! I want to book the Per Head package for 1–${item.members} member(s).`
                   )
                 }
                 className="bg-green-600 hover:bg-green-700 text-white mt-4 w-full"
@@ -182,7 +187,7 @@ export default function WayanadServices() {
                 <motion.div
                   key={i}
                   whileHover={{ scale: 0.98 }}
-                  className="relative flex-shrink-0 rounded-3xl shadow-lg overflow-hidden w-80"
+                  className="relative flex-shrink-0 rounded-3xl shadow-lg overflow-hidden w-80 bg-white"
                 >
                   <Image
                     src={`/images/${place.img}`}
@@ -235,7 +240,7 @@ export default function WayanadServices() {
                 <>
                   <span className="text-black">Trucking</span>{" "}
                   <span className="text-primary">Tour</span>{" "}
-                  <span className="text-secondary"> Packages</span>
+                  <span className="text-secondary">Packages</span>
                 </>
               )}
               {selectedService === "driver" && (
@@ -249,13 +254,13 @@ export default function WayanadServices() {
 
             <p className="text-black max-w-2xl mx-auto">
               {selectedService === "wayanad" &&
-                "Explore Wayanad’s natural beauty! Visit Edakkal Caves, Soochipara Waterfalls, Banasura Sagar Dam, Pookode Lake, and more."}
+                "Explore Wayanad’s natural beauty — Edakkal Caves, Soochipara Waterfalls, Banasura Sagar Dam, and more."}
               {selectedService === "resort" &&
-                "We provide the best deals for luxurious resorts and budget-friendly hotels in Wayanad."}
+                "Find the best deals for luxurious resorts and budget-friendly hotels in Wayanad."}
               {selectedService === "truck" &&
-                "Enjoy adventurous trucking tours through the scenic routes of Wayanad!"}
+                "Experience adventurous trucking tours through Wayanad’s scenic mountain routes."}
               {selectedService === "driver" &&
-                "Hire professional drivers and local guides for a comfortable and informative travel experience."}
+                "Hire professional drivers and local guides for a smooth and insightful journey."}
             </p>
 
             <motion.div className="flex gap-6 overflow-x-auto py-6 px-4 scrollbar-none">
@@ -263,7 +268,7 @@ export default function WayanadServices() {
                 <motion.div
                   key={i}
                   whileHover={{ scale: 0.98 }}
-                  className="relative flex-shrink-0 overflow-hidden rounded-3xl shadow-lg w-80"
+                  className="relative flex-shrink-0 overflow-hidden rounded-3xl shadow-lg w-80 bg-white"
                 >
                   <Image
                     src={`/images/${item.img}`}
@@ -313,7 +318,6 @@ export default function WayanadServices() {
               Our <span className="text-primary">Tour</span>{" "}
               <span className="text-secondary">Operating</span>
             </h2>
-            <br />
 
             <div className="flex gap-3 overflow-x-auto justify-center scrollbar-none">
               {["bathery", "kalpetta", "perhead"].map((sub) => (
@@ -324,22 +328,17 @@ export default function WayanadServices() {
                     setSelectedSub(sub);
                     setSelectedDay("day1");
                   }}
-                  className={`
-                    relative overflow-hidden px-6 py-2 font-semibold transition-all duration-300
-                    ${
-                      selectedSub === sub
-                        ? "bg-secondary text-black"
-                        : "bg-black text-yellow-400 border-black hover:text-black hover:bg-yellow-400 hover:border-yellow-400 hover:scale-105"
-                    }
-                  `}
+                  className={`${
+                    selectedSub === sub
+                      ? "bg-secondary text-black"
+                      : "bg-black text-yellow-400 border-black hover:text-black hover:bg-yellow-400 hover:border-yellow-400 hover:scale-105"
+                  } px-6 py-2 font-semibold transition-all duration-300`}
                 >
-                  <span className="relative z-10">
-                    {sub === "bathery"
-                      ? "Bathery"
-                      : sub === "kalpetta"
-                      ? "Kalpetta"
-                      : "Per Head"}
-                  </span>
+                  {sub === "bathery"
+                    ? "Bathery"
+                    : sub === "kalpetta"
+                    ? "Kalpetta"
+                    : "Per Head"}
                 </Button>
               ))}
             </div>
