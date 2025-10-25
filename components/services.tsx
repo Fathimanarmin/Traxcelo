@@ -15,12 +15,12 @@ export default function WayanadServices() {
     { id: "wayanad", name: "Wayanad Sightseeing" },
     { id: "tour", name: "Tour Operating" },
     { id: "resort", name: "Resort & Hotel Booking" },
-    { id: "truck", name: "Trucking Tour Packages" },
+    { id: "truck", name: "Trekking Tour Packages" },
     { id: "driver", name: "Call Driver & Guide" },
   ];
 
   const whatsappMessage = (msg: string) => {
-    const phone = "919961320536"; // No '+' for wa.me links
+    const phone = "918921238025"; // No '+' for wa.me links
     const encodedMsg = encodeURIComponent(msg);
     window.open(`https://wa.me/${phone}?text=${encodedMsg}`, "_blank");
   };

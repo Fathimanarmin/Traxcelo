@@ -1,15 +1,12 @@
+"use client";
 
-"use client"
-
-import { useState, useEffect, useRef } from "react"
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import BookingModal from "@/components/booking-modal"
-import { motion } from "framer-motion"
+import { useState, useEffect, useRef } from "react";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { motion } from "framer-motion";
 
 export default function Hero() {
-  const [open, setOpen] = useState(false)
-  const bgRef = useRef<HTMLDivElement | null>(null)
+  const bgRef = useRef<HTMLDivElement | null>(null);
 
   const photos = [
     { src: "/images/chembra peak.png", alt: "Chembra Peak" },
@@ -17,36 +14,39 @@ export default function Hero() {
     { src: "/images/Neelimala_View_Point.avif", alt: "Neelimala View Point" },
     { src: "/images/bamboo forest.png", alt: "Bamboo Forest" },
     { src: "/images/soochipara.avif", alt: "Soochipara Falls" },
-  ]
+  ];
 
-  // Parallax effect for background
+  // ✅ Parallax effect for background
   useEffect(() => {
-    const el = bgRef.current
-    if (!el) return
+    const el = bgRef.current;
+    if (!el) return;
+
     const prefersReduced =
       typeof window !== "undefined" &&
       window.matchMedia &&
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches
-    if (prefersReduced) return
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    let raf = 0
+    if (prefersReduced) return;
+
+    let raf = 0;
     const onScroll = () => {
-      cancelAnimationFrame(raf)
+      cancelAnimationFrame(raf);
       raf = requestAnimationFrame(() => {
-        const y = window.scrollY
-        el.style.transform = `translateY(${Math.min(y * 0.15, 80)}px)`
-      })
-    }
-    window.addEventListener("scroll", onScroll, { passive: true })
+        const y = window.scrollY;
+        el.style.transform = `translateY(${Math.min(y * 0.15, 80)}px)`;
+      });
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => {
-      cancelAnimationFrame(raf)
-      window.removeEventListener("scroll", onScroll)
-    }
-  }, [])
+      cancelAnimationFrame(raf);
+      window.removeEventListener("scroll", onScroll);
+    };
+  }, []);
 
   return (
     <section id="top" className="relative overflow-hidden">
-      {/* Background */}
+      {/* ✅ Background */}
       <div
         ref={bgRef}
         aria-hidden="true"
@@ -54,7 +54,7 @@ export default function Hero() {
       >
         <Image
           src="/images/wayanad-hero.jpg"
-          alt=""
+          alt="Wayanad Scenic Background"
           fill
           priority
           sizes="100vw"
@@ -70,40 +70,49 @@ export default function Hero() {
         />
       </div>
 
-      <div className="mx-auto max-w-6xl px-4 py-24 sm:py-28 md:py-32 -mt-21">
+      {/* ✅ Hero Content */}
+      <div className="mx-auto max-w-6xl px-4 py-24 sm:py-28 md:py-32">
         <motion.div
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
           className="max-w-2xl"
         >
-          <h1 className="mt- text-4xl sm:text-5xl lg:text-6xl font-serif text-white opacity-100 text-popover-foreground">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-serif text-white">
             Experience Wayanad in Comfort & Style
           </h1>
           <p className="mt-4 text-base sm:text-lg text-red-950">
-            Breathe in the fresh mountain air, wander through lush forests, and find peace amidst nature’s beauty
+            Breathe in the fresh mountain air, wander through lush forests, and
+            find peace amidst nature’s beauty.
           </p>
 
+          {/* ✅ WhatsApp Button */}
           <div className="mt-8 flex flex-col sm:flex-row gap-3">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 1 }}
             >
-              <Button
-                className="bg-accent text-background hover:bg-accent/90"
-                onClick={() => setOpen(true)}
+              <a
+                href="https://wa.me/918921238025"
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                Book a Ride
-              </Button>
+                <Button className="bg-accent text-background hover:bg-accent/90">
+                  Book a Ride
+                </Button>
+              </a>
             </motion.div>
           </div>
         </motion.div>
 
-        {/* Photo Grid with hover animation */}
+        {/* ✅ Photo Grid with hover animation */}
         <div className="relative mt-12 md:mt-16">
           {/* Mobile horizontal scroll */}
-          <div className="sm:hidden overflow-x-auto" style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}>
+          <div
+            className="sm:hidden overflow-x-auto"
+            style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+          >
             <div className="flex gap-4 px-2">
               {photos.map((p, i) => (
                 <motion.div
@@ -114,7 +123,7 @@ export default function Hero() {
                   className="rounded-2xl overflow-hidden bg-background/90 shadow-lg ring-1 ring-black/5 hover:-translate-y-2 transition-transform duration-500 flex-shrink-0 w-64"
                 >
                   <Image
-                    src={p.src || "/placeholder.svg"}
+                    src={p.src}
                     alt={p.alt}
                     width={280}
                     height={420}
@@ -137,7 +146,7 @@ export default function Hero() {
                 className="rounded-2xl overflow-hidden bg-background/90 shadow-lg ring-1 ring-black/5 hover:-translate-y-2 transition-transform duration-500"
               >
                 <Image
-                  src={p.src || "/placeholder.svg"}
+                  src={p.src}
                   alt={p.alt}
                   width={280}
                   height={420}
@@ -150,14 +159,12 @@ export default function Hero() {
         </div>
       </div>
 
-      <BookingModal open={open} onOpenChange={setOpen} />
-
-      {/* Inline CSS to hide scrollbar on mobile */}
+      {/* ✅ Hide scrollbar on mobile */}
       <style jsx>{`
         .sm\\:hidden::-webkit-scrollbar {
           display: none;
         }
       `}</style>
     </section>
-  )
+  );
 }
