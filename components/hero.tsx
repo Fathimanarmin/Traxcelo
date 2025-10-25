@@ -13,7 +13,7 @@ export default function Hero() {
     { src: "/images/meenmutty.avif", alt: "MeenMutty Waterfalls" },
     { src: "/images/Neelimala_View_Point.avif", alt: "Neelimala View Point" },
     { src: "/images/bamboo forest.png", alt: "Bamboo Forest" },
-    { src: "/images/driver1.jpg", alt: "Soochipara Falls" },
+    { src: "/images/jeep.png", alt: "Soochipara Falls" },
   ];
 
   // ✅ Parallax effect for background

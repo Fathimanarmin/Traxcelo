@@ -22,7 +22,7 @@ export default function WayanadServices() {
     { id: "wayanad", name: "Wayanad Sightseeing" },
     { id: "tour", name: "Tour Operating" },
     { id: "resort", name: "Resort & Hotel Booking" },
-    { id: "treck", name: "Trecking Tour Packages" },
+    { id: "truck", name: "Trekking Tour Packages" },
     { id: "driver", name: "Call Driver & Guide" },
   ];
 
@@ -243,7 +243,7 @@ export default function WayanadServices() {
               )}
               {selectedService === "truck" && (
                 <>
-                  <span className="text-black">Trecking</span>{" "}
+                  <span className="text-black">Trekking</span>{" "}
                   <span className="text-primary">Tour</span>{" "}
                   <span className="text-secondary">Packages</span>
                 </>
@@ -263,7 +263,7 @@ export default function WayanadServices() {
               {selectedService === "resort" &&
                 "We provide the best deals for luxurious resorts and budget-friendly hotels in Wayanad."}
               {selectedService === "truck" &&
-                "Enjoy adventurous trucking tours through the scenic routes of Wayanad!"}
+                "Enjoy adventurous trekking tours through the scenic routes of Wayanad!"}
               {selectedService === "driver" &&
                 "Hire professional drivers and local guides for a comfortable and informative travel experience."}
             </p>
@@ -298,7 +298,7 @@ export default function WayanadServices() {
                       : selectedService === "resort"
                       ? "Resort/Hotel Booking"
                       : selectedService === "truck"
-                      ? "Trucking Tour Packages"
+                      ? "Trekking Tour Packages"
                       : "Driver & Guide Service"
                   }.` 
                 )

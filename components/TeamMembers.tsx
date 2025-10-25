@@ -5,28 +5,32 @@ import Image from "next/image";
 import { useEffect } from "react";
 
 const teamMembers = [
-  { name: "Arun Jith", field: "Managing Director", image: "/images/arun.png" },
-  { name: "Noushad", field: "Manager", image: "/images/noushad.jpg" },
-  { name: "Shihab", field: "Assistant Manager", image: "/" },
+  { name: "Arun Jith", field: "Managing Director", image: "/images/arun.png" , alt:""},
+  { name: "Noushad", field: "Manager", image: "/images/noushad.jpg", alt:"" },
+  { name: "Shihab", field: "Assistant Manager", image: "/" , alt:""},
   {
     name: "AnilKumar T P",
     field: "Field Assistant",
     image: "/images/anil.png",
+    alt:""
   },
   {
     name: "Sinesh",
     field: "Field Assistant & Tourism Badge Driver",
     image: "/images/sinesh.jpg",
+    alt:""
   },
   {
     name: "Jaseel",
     field: "Field Assistant & Tourism Badge Driver",
     image: "/",
+    alt:""
   },
   {
     name: "Krishnan",
     field: "Field Assistant & Tourism Badge Driver",
-    image: "/",
+    image: "/images/krishnan.png",
+    alt:""
   },
 ];
 
