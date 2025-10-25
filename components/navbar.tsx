@@ -34,21 +34,23 @@ export default function Navbar() {
       }`}
       aria-label="Primary"
     >
-      <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-2 flex items-center justify-between">
+      <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-2 flex items-center justify-between h-20">
         {/* Logo */}
         <Link
           href="#top"
           className="flex items-center gap-3"
           aria-label="TRAXELO home"
         >
-          <Image
-            src="/images/traxelo-logo.png"
-            alt="TRAXELO logo"
-            width={50}
-            height={50}
-            className="w-24 h-20"
-            priority
-          />
+          <div className="relative flex items-center justify-center">
+            <Image
+              src="/images/traxelo-logo.png"
+              alt="TRAXELO logo"
+              width={50}
+              height={50}
+              className="w-32 min-h-32 scale-125 sm:scale-110 transition-transform duration-300"
+              priority
+            />
+          </div>
           <span className="font-serif font-bold text-lg tracking-wide text-white"></span>
         </Link>
 
@@ -67,7 +69,11 @@ export default function Navbar() {
 
         {/* Right Actions */}
         <div className="flex items-center gap-2">
-          <a href="#contact">
+          <a
+            href="https://wa.me/918921238025"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <Button className="bg-accent text-black px-4 py-1.5 font-semibold rounded-md shadow-md transition-all duration-300 hover:bg-yellow-500 hover:text-white hover:scale-105 hover:shadow-xl">
               Book a Ride
             </Button>
@@ -104,7 +110,12 @@ export default function Navbar() {
                       {link.label}
                     </a>
                   ))}
-                  <a href="#contact" className="mt-4">
+                  <a
+                    href="https://wa.me/918921238025"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-4"
+                  >
                     <Button className="w-full bg-accent text-black px-4 py-2 font-semibold rounded-md shadow-md transition-all duration-300 hover:bg-yellow-500 hover:text-white hover:scale-105 hover:shadow-xl">
                       Book a Ride
                     </Button>

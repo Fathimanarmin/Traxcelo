@@ -1,4 +1,3 @@
-
 "use client";
 
 import { motion } from "framer-motion";
@@ -8,16 +7,31 @@ import { useEffect } from "react";
 const teamMembers = [
   { name: "Arun Jith", field: "Managing Director", image: "/images/arun.png" },
   { name: "Noushad", field: "Manager", image: "/images/noushad.jpg" },
-  { name: "Shihab", field: "Assistant Manager", image: "/images/team/shihab.jpg" },
-  { name: "AnilKumar T P", field: "Field Assistant", image: "/images/anil.png" },
-  { name: "Sinesh", field: "Field Assistant & Tourism Badge Driver", image: "/images/sinesh.jpg" },
-  { name: "Jaseel", field: "Field Assistant & Tourism Badge Driver", image: "/images/team/jaseel.jpg" },
-  { name: "Krishnan", field: "Field Assistant & Tourism Badge Driver", image: "/images/team/krishnan.jpg" },
+  { name: "Shihab", field: "Assistant Manager", image: "/" },
+  {
+    name: "AnilKumar T P",
+    field: "Field Assistant",
+    image: "/images/anil.png",
+  },
+  {
+    name: "Sinesh",
+    field: "Field Assistant & Tourism Badge Driver",
+    image: "/images/sinesh.jpg",
+  },
+  {
+    name: "Jaseel",
+    field: "Field Assistant & Tourism Badge Driver",
+    image: "/",
+  },
+  {
+    name: "Krishnan",
+    field: "Field Assistant & Tourism Badge Driver",
+    image: "/",
+  },
 ];
 
 export default function TeamMembers() {
-
-    useEffect(() => {
+  useEffect(() => {
     // Remove accidental text cursor on load
     if (document.activeElement instanceof HTMLElement) {
       document.activeElement.blur();
@@ -26,18 +40,10 @@ export default function TeamMembers() {
   return (
     <div id="teamMembers" className="max-w-6xl mx-auto px-4 py-16 mt-8">
       {/* ========================= Heading Section ========================= */}
-      <div
-        className="relative max-w-3xl mx-auto flex items-center justify-center gap-6 mb-10"
-        
-      >
-     
-
+      <div className="relative max-w-3xl mx-auto flex items-center justify-center gap-6 mb-10">
         {/* Title text */}
         <div style={{ textAlign: "center" }}>
-          <h2
-            className="select-none pointer-events-none font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-center text-black"
-           
-          >
+          <h2 className="select-none pointer-events-none font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-center text-black">
             Our <span className="text-primary">Team</span>{" "}
             <span className="text-secondary">Members</span>
           </h2>
@@ -78,7 +84,6 @@ export default function TeamMembers() {
               src={member.image}
               alt={member.name}
               fill
-              
               className="object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
             />
 
@@ -109,4 +114,3 @@ export default function TeamMembers() {
     </div>
   );
 }
-
