@@ -11,7 +11,8 @@
   --card-foreground: oklch(0.25 0.02 40);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.25 0.02 40);
-  --primary: oklch(0.35 0.08 35); /* Rust red rgb(101, 29, 14) */
+  /* --primary: oklch(0.35 0.08 35);  */
+  --primary: oklch(0.75 0.12 85); 
   --primary-foreground: oklch(0.98 0.01 60);
   --secondary: oklch(0.75 0.12 85); /* Gold #C19A00 */
   --secondary-foreground: oklch(0.25 0.02 40);
@@ -47,7 +48,7 @@
   --card-foreground: oklch(0.985 0 0);
   --popover: oklch(0.145 0 0);
   --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.35 0.08 35);
+  --primary: oklch(0.75 0.12 85);
   --primary-foreground: oklch(0.98 0.01 60);
   --secondary: oklch(0.75 0.12 85);
   --secondary-foreground: oklch(0.25 0.02 40);

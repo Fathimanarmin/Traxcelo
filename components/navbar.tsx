@@ -70,7 +70,7 @@ export default function Navbar() {
         {/* Right Actions */}
         <div className="flex items-center gap-2">
           <a
-            href="https://wa.me/918921238025"
+            href="https://wa.me/+918921238025"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -111,7 +111,7 @@ export default function Navbar() {
                     </a>
                   ))}
                   <a
-                    href="https://wa.me/918921238025"
+                    href="https://wa.me/ +918921238025"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="mt-4"

@@ -39,20 +39,31 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Brand */}
-          <motion.div initial="hidden" whileInView="visible" viewport={{ once: false }} variants={popVariants} className="space-y-4">
-            <div className="relative w-64 h-32 -mt-6 -mt-10">
-  <Image
-    src="/images/traxelo-logo.png"
-    alt="TRAXELO"
-    fill
-    className="object-contain"
-  />
-</div>
+        
 
-            <p className="text-[#cccccc] leading-relaxed">
-              Your trusted partner for premium travel solutions in Wayanad.
-            </p>
-          </motion.div>
+
+          <motion.div
+  initial="hidden"
+  whileInView="visible"
+  viewport={{ once: false }}
+  variants={popVariants}
+  className="space-y-4"
+>
+  <div className="relative w-100 h-70 -mt-23 flex justify-end">
+    <Image
+      src="/images/traxelo-logo.png"
+      alt="TRAXELO"
+      fill
+      className="object-contain  relative w-100 h-70 -mt-1 flex justify-end -ml-25"/>
+     </div>
+ 
+
+  <p className="text-[#cccccc] leading-relaxed -mt-16 -ml-5">
+    Your trusted partner for premium travel solutions in Wayanad.
+  </p>
+  
+</motion.div>
+
 
           {/* Quick Links */}
           <motion.div initial="hidden" whileInView="visible" viewport={{ once: false }} variants={popVariants}>
@@ -76,7 +87,7 @@ export default function Footer() {
             <h3 className="font-semibold text-lg mb-4 text-[#FFD700]">Our Services</h3>
             <ul className="space-y-2 text-[#cccccc]">
               {["Wayanad Sightseeing", "Tour Operating", "Resort & Hotel Booking", "Trucking Tour Packages", "Call Driver & Guide"].map((service) => (
-                <li key={service} className="relative group after:absolute after:left-0 after:-bottom-0.5 after:w-0 after:h-[2px] after:bg-[#FFD700] after:transition-all after:duration-300 hover:after:w-full">
+                <li key={service} className="relative group after:absolute after:left-0 after:-bottom-0.5 after:w-0 after:h-[2px] after:bg-[#FFD700] after:transition-all after:duration-200 hover:after:w-48">
                   {service}
                 </li>
               ))}
@@ -93,7 +104,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-2">
                 <Phone className="w-5 h-5 flex-shrink-0 text-[#FFD700]" />
-                <span>+91 99613 20536</span>
+                <span>+918921238025</span>
               </li>
               <li className="flex items-center gap-2">
                 <Mail className="w-5 h-5 flex-shrink-0 text-[#FFD700]" />

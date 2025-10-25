@@ -48,7 +48,7 @@ export default function About() {
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{ once: true }} // 👈 animation runs only once
             variants={containerVariants}
             className="space-y-6"
           >
@@ -116,7 +116,7 @@ export default function About() {
           <motion.div
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false, amount: 0.3 }}
+            viewport={{ once: true }} // 👈 only one-time animation
             variants={imageVariants}
             className="relative"
           >
@@ -138,5 +138,4 @@ export default function About() {
     </section>
   );
 }
-
 

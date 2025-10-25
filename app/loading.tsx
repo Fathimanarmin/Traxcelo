@@ -14,7 +14,7 @@ export default function Loading() {
           alt="TRAXELO Wayanad logo"
           className="drop-shadow-xl motion-safe:animate-pulse-soft"
         />
-        <div className="motion-safe:animate-rise text-center text-balance" style={{ color: "var(--color-accent)" }}>
+        <div className="motion-safe:animate-rise text-center text-balance -mt-6" style={{ color: "var(--color-accent)" }}>
           Crafting your travel experience…
         </div>
         {/* Inline spinner to avoid extra deps */}
